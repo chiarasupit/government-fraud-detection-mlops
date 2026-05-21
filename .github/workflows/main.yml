@@ -20,7 +20,7 @@ jobs:
 
     - name: Install dependencies
       run: |
-        pip install flask mlflow
+        pip install flask mlflow pandas numpy scikit-learn joblib
 
     - name: Verify Python installation
       run: |
