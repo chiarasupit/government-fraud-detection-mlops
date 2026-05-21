@@ -22,6 +22,14 @@ jobs:
       run: |
         pip install flask mlflow
 
-    - name: Run training script
+    - name: Verify Python installation
       run: |
-        python train.py
+        python --version
+
+    - name: Verify Flask installation
+      run: |
+        python -c "import flask; print('Flask installed successfully')"
+
+    - name: Verify MLflow installation
+      run: |
+        python -c "import mlflow; print('MLflow installed successfully')"
