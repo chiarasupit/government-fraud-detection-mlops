@@ -1,0 +1,35 @@
+name: MLOps Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.13'
+
+    - name: Install dependencies
+      run: |
+        pip install flask mlflow pandas numpy scikit-learn joblib
+
+    - name: Verify Python installation
+      run: |
+        python --version
+
+    - name: Verify Flask installation
+      run: |
+        python -c "import flask; print('Flask installed successfully')"
+
+    - name: Verify MLflow installation
+      run: |
+        python -c "import mlflow; print('MLflow installed successfully')"
