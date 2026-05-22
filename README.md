@@ -46,6 +46,7 @@ government-fraud-detection-mlops/
 │
 ├── .github/
 │   └── workflows/
+│       ├── main.yml
 │       └── retrain.yml
 │
 ├── data/
